@@ -1,0 +1,8 @@
+# ----- BLOCKS -----
+tile.block_copper.name=copper block
+
+# ----- ITEMS  -----
+item.ingot_copper.name=Copper Ingot
+
+
+
