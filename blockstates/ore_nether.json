@@ -1,0 +1,7 @@
+{
+  "variants":
+  {
+
+    "variant=manox": { "model": "mm:ore_nether_manox"}
+  }
+}

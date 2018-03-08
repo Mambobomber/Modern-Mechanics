@@ -1,0 +1,11 @@
+{
+  "variants":
+  {
+
+    "variant=copper": { "model": "mm:ore_overworld_copper"},
+    "variant=silver": { "model": "mm:ore_overworld_silver"},
+    "variant=tin": { "model": "mm:ore_overworld_tin"},
+    "variant=cobalt": { "model": "mm:ore_overworld_cobalt"},
+    "variant=manganese": { "model": "mm:ore_overworld_manganese"}
+  }
+}

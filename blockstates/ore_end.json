@@ -1,0 +1,7 @@
+{
+  "variants":
+  {
+
+    "variant=surpordium": { "model": "mm:ore_end_surpordium"}
+  }
+}
