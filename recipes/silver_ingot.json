@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+
+    "pattern":
+    [
+        "B"
+    ],
+    "key":
+    {
+        "B":{"item": "tutorialmod:block_silver"}
+    },
+    "result":
+    {
+        "item": "tutorialmod:item_silver_ingot",
+        "count": 9
+    }
+}

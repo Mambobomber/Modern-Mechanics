@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+
+    "pattern":
+    [
+        "B"
+    ],
+    "key":
+    {
+        "B":{"item": "tutorialmod:block_tin"}
+    },
+    "result":
+    {
+        "item": "tutorialmod:item_bronze_tin",
+        "count": 9
+    }
+}

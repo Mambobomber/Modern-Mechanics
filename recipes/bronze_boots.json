@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+
+    "pattern":
+    [
+        "   ",
+        "I I",
+        "I I"
+    ],
+    "key":
+    {
+        "I":{"item": "tutorialmod:item_bronze_ingot"}
+    },
+    "result":
+    {
+        "item": "tutorialmod:item_bronze_boots",
+        "count": 1
+    }
+}
