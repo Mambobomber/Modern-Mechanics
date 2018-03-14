@@ -1,6 +1,7 @@
 package com.lucbeaulieu.mm.Objects.Armor;
 
 import com.lucbeaulieu.mm.Init.ItemInit;
+import com.lucbeaulieu.mm.Main;
 import com.lucbeaulieu.mm.Util.Interfaces.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -19,7 +20,8 @@ public class ArmorBase extends ItemArmor implements IHasModel
     }
 
     @Override
-    public void registerModels() {
-
+    public void registerModels()
+    {
+        Main.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

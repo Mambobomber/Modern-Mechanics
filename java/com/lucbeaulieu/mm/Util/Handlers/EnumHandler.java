@@ -1,34 +1,30 @@
 package com.lucbeaulieu.mm.Util.Handlers;
 
-import net.minecraft.client.renderer.vertex.VertexFormatElement;
 import net.minecraft.util.IStringSerializable;
 
+@SuppressWarnings("ALL")
 public class EnumHandler
 {
     public enum EnumType implements IStringSerializable
     {
-        COPPER(0, "copper"),
-        TIN(1, "tin"),
-        SILVER(2, "silver"),
-        MANOX(3, "manox"),
-        COBALT(4, "cobalt"),
-        MANGANESE(5, "manganese"),
-        SURPORDIUM(6, "surpordium");
+        COPPER(0, "copper"), TIN(1, "tin"), SILVER(2, "silver"),
+        MANOX(3, "manox"), COBALT(4, "cobalt"), MANGANESE(5, "manganese"),
+        SURPORDIUM(6, "surpordium"), RUBBER(6, "rubber"), NETHER(6, "NETHER"), END(6, "end");
 
         private static final EnumType[] META_LOOKUP = new EnumType[values().length];
         private final int meta;
-        private final String name, unlocializedName;
+        private final String name, unlocalizedName;
 
-        private EnumType(int meta, String name)
+        EnumType(int meta, String name)
         {
             this(meta, name, name);
         }
 
-        private EnumType(int meta, String name, String unlocializedName)
+        EnumType(int meta, String name, String unlocalizedName)
         {
             this.meta = meta;
             this.name = name;
-            this.unlocializedName = unlocializedName;
+            this.unlocalizedName = unlocalizedName;
         }
 
         @Override
@@ -42,9 +38,9 @@ public class EnumHandler
             return this.meta;
         }
 
-        public String getUnlocializedName()
+        public String getUnlocalizedName()
         {
-            return this.unlocializedName;
+            return this.unlocalizedName;
         }
 
         @Override

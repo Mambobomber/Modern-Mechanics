@@ -25,14 +25,12 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockOres extends Block implements IHasModel, IMetaName
-{
+public class BlockOres extends Block implements IHasModel, IMetaName {
 
     public static final PropertyEnum<EnumHandler.EnumType> VARIANT = PropertyEnum.<EnumHandler.EnumType>create("variant", EnumHandler.EnumType.class);
     private String name, dimension;
 
-    public BlockOres(String name, String dimension)
-    {
+    public BlockOres(String name, String dimension) {
         super(Material.ROCK);
         setUnlocalizedName(name);
         setRegistryName(name);
@@ -46,29 +44,28 @@ public class BlockOres extends Block implements IHasModel, IMetaName
         ItemInit.ITEMS.add(new ItemBlockVeriant(this).setRegistryName(this.getRegistryName()));
     }
 
+    //OVERRIDE METHODS
+
+    //**********************************//
+
     @Override
-    public int damageDropped(IBlockState state)
-    {
-        return ((EnumHandler.EnumType)state.getValue(VARIANT)).getMeta();
+    public int damageDropped(IBlockState state) {
+        return ((EnumHandler.EnumType) state.getValue(VARIANT)).getMeta();
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
-        return ((EnumHandler.EnumType)state.getValue(VARIANT)).getMeta();
+    public int getMetaFromState(IBlockState state) {
+        return ((EnumHandler.EnumType) state.getValue(VARIANT)).getMeta();
     }
 
     @Override
-    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
-    {
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
         return new ItemStack(Item.getItemFromBlock(this), 1, getMetaFromState(world.getBlockState(pos)));
     }
 
     @Override
-    public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
-    {
-        for (EnumHandler.EnumType variant : EnumHandler.EnumType.values())
-        {
+    public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
+        for (EnumHandler.EnumType variant : EnumHandler.EnumType.values()) {
             items.add(new ItemStack(this, 1, variant.getMeta()));
         }
     }
@@ -79,26 +76,44 @@ public class BlockOres extends Block implements IHasModel, IMetaName
     }
 
     @Override
-    protected BlockStateContainer createBlockState()
-    {
+    protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, new IProperty[]{VARIANT});
     }
 
     @Override
-    public String getSpecialName(ItemStack stack)
-    {
+    public String getSpecialName(ItemStack stack) {
         return EnumHandler.EnumType.values()[stack.getItemDamage()].getName();
     }
 
-
     @Override
-    public void registerModels()
-    {
+    public void registerModels() {
         assert this.name != null;
-        for (int i = 0; /*assert**/ i < EnumHandler.EnumType.values().length; i++)
-        {
-           Main.proxy.registerVariantRenderer(Item.getItemFromBlock(this), i, "ore_" + this.dimension + "_" + EnumHandler.EnumType.values()[i].getName(), "inventory");
+        for (int i = 0; i < EnumHandler.EnumType.values().length; i++) {
+            Main.proxy.registerVariantRenderer(Item.getItemFromBlock(this), i, "ore_" + this.dimension + "_" + EnumHandler.EnumType.values()[i].getName(), "inventory");
         }
     }
 
+    //**********************************//
 }
+
+
+
+
+
+/*
+            --> start <--
+new setType copper = <ore, ingot, block, tools, armor>(material.copper)
+{
+    ore.add(copper);
+    ingot.add(copper);
+    block.add(copper);
+    tools.add(<<pickAxe, axe, shovel, sword, hoe>, material.set(copper)>, copper);
+    armor.add(<<helmet, chestPlate, leggings, boots>, armorMaterial.set(copper)>, copper);
+    copper.init();
+    copper.addAll();
+    copper.load();
+}
+            --> end <--
+
+*/
+

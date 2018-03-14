@@ -1,6 +1,7 @@
 package com.lucbeaulieu.mm.Objects.Tools;
 
 import com.lucbeaulieu.mm.Init.ItemInit;
+import com.lucbeaulieu.mm.Main;
 import com.lucbeaulieu.mm.Util.Interfaces.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemHoe;
@@ -18,7 +19,8 @@ public class ToolHoe extends ItemHoe implements IHasModel
     }
 
     @Override
-    public void registerModels() {
-
+    public void registerModels()
+    {
+        Main.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }

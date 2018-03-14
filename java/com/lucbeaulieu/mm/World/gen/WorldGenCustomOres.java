@@ -34,8 +34,6 @@ public class WorldGenCustomOres implements IWorldGenerator
         ore_overwold_manganese = new WorldGenMinable(BlockInit.ORE_OVERWORLD.getDefaultState().withProperty(BlockOres.VARIANT, EnumHandler.EnumType.MANGANESE),9, BlockMatcher.forBlock(Blocks.STONE));
         ore_nether_manox = new WorldGenMinable(BlockInit.ORE_NETHER.getDefaultState().withProperty(BlockOres.VARIANT, EnumHandler.EnumType.MANOX),9, BlockMatcher.forBlock(Blocks.NETHERRACK));
         ore_end_surpordium = new WorldGenMinable(BlockInit.ORE_END.getDefaultState().withProperty(BlockOres.VARIANT, EnumHandler.EnumType.SURPORDIUM),9, BlockMatcher.forBlock(Blocks.END_STONE));
-
-
     }
 
 

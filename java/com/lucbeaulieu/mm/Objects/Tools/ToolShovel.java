@@ -1,6 +1,7 @@
 package com.lucbeaulieu.mm.Objects.Tools;
 
 import com.lucbeaulieu.mm.Init.ItemInit;
+import com.lucbeaulieu.mm.Main;
 import com.lucbeaulieu.mm.Util.Interfaces.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemSpade;
@@ -18,8 +19,9 @@ public class ToolShovel extends ItemSpade implements IHasModel
     }
 
     @Override
-    public void registerModels() {
-
+    public void registerModels()
+    {
+        Main.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }
 

@@ -2,6 +2,7 @@ package com.lucbeaulieu.mm.Objects.Tools;
 
 import com.google.common.collect.Sets;
 import com.lucbeaulieu.mm.Init.ItemInit;
+import com.lucbeaulieu.mm.Main;
 import com.lucbeaulieu.mm.Util.Interfaces.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -25,16 +26,10 @@ public class ToolAxe extends ItemTool implements IHasModel
         ItemInit.ITEMS.add(this);
     }
 
-//    public float getStrVsBlock(ItemStack stack, IBlockState state)
-//    {
-//        Material material = state.getMaterial();
-//        return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ?
-//                super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
-//    }
 
     @Override
     public void registerModels()
     {
-
+        Main.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }
